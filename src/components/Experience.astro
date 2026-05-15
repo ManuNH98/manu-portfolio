@@ -1,85 +1,88 @@
-<section>
-    <div class="py-16">
-        <div class="flex justify-between items-center pb-10">
-            <h2 class="text-5xl">Experiencia</h2>
-            <a href="#" class="text-xl border-b-2 border-yellow pb-3 ease-in duration-200 hover:border-b-8">Contáctame</a>
-        </div>
+---
+const jobs = [
+    
+    {
+        title: "FullStack Developer",
+        type: "Fulltime",
+        company: "The Wise Dreams S.L.U.",
+        location: "Las Palmas",
+        period: "Ene 2026 - Actualidad",
+    },    
+    {
+        title: "Web Leader",
+        type: "Fulltime",
+        company: "SPV Scala S.L.",
+        location: "Las Palmas",
+        period: "Oct 2024 - Ene 2026",
+    },
+    {
+        title: "Web Leader",
+        type: "Fulltime",
+        company: "Wise People S.L.U.",
+        location: "Las Palmas",
+        period: "Mar 2023 - Oct 2024",
+    },
+    {
+        title: "Software Developer",
+        type: "Temporal",
+        company: "Fundación Canaria Living Lab",
+        location: "Las Palmas",
+        period: "Nov 2022 - Mar 2023",
+    },
+    {
+        title: "Software Developer",
+        type: "Prácticas",
+        company: "ADESCO",
+        location: "Telde",
+        period: "Mar 2021 - May 2021",
+    },
+];
+
+const education = {
+    title: "CFGS Desarrollo de Aplicación Multiplataforma",
+    type: "Fulltime",
+    center: "IES El Rincón",
+    location: "Las Palmas",
+    period: "Sep 2018 - Jun 2021",
+};
+---
+
+<section id="experiencia" class="py-20 sm:py-24">
+    <div class="mb-10 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
         <div>
-            <div class="pb-5">
-                <div class="flex justify-between pb-1.5">
-                    <h4 class="text-2xl">Web Leader</h4>
-                    <p class="bg-yellow rounded-full p-2 px-4">Fulltime</p>
-                </div>
-                <div class="flex justify-between">
-                    <div class="flex justify-between w-1/3">
-                        <p>SPV Scala S.L.</p>
-                        <p>Las Palmas</p>
-                    </div>
-                    <p class="w-2/3 text-right">Oct 2024 - Actualidad</p>
-                </div>
-            </div>
-            <hr class="border-zinc-500">
-            <div class="py-5">
-                <div class="flex justify-between pb-1.5">
-                    <h4 class="text-2xl">Web Leader</h4>
-                    <p class="bg-yellow rounded-full p-2 px-4">Fulltime</p>
-                </div>
-                <div class="flex justify-between">
-                    <div class="flex justify-between w-1/3">
-                        <p>Wise People S.L.U.</p>
-                        <p>Las Palmas</p>
-                    </div>
-                    <p class="w-2/3 text-right">Mar 2023 - Oct 2024</p>
-                </div>
-            </div>
-            <hr class="border-zinc-500">
-            <div class="py-5">
-                <div class="flex justify-between pb-1.5">
-                    <h4 class="text-2xl">Software Developer</h4>
-                    <p class="bg-yellow rounded-full p-2 px-4">Temporal</p>
-                </div>
-                <div class="flex justify-between">
-                    <div class="flex justify-between w-1/3">
-                        <p>Fundación Canaria Living Lab</p>
-                        <p>Las Palmas</p>
-                    </div>
-                    <p class="w-2/3 text-right">Nov 2022 - Mar 2023</p>
-                </div>
-            </div>
-            <hr class="border-zinc-500">
-            <div class="py-5">
-                <div class="flex justify-between pb-1.5">
-                    <h4 class="text-2xl">Software Developer</h4>
-                    <p class="bg-yellow rounded-full p-2 px-4">Prácticas</p>
-                </div>
-                <div class="flex justify-between">
-                    <div class="flex justify-between w-1/3">
-                        <p>ADESCO</p>
-                        <p>Telde</p>
-                    </div>
-                    <p class="w-2/3 text-right">Mar 2021 - May 2021</p>
-                </div>
-            </div>
-            <hr class="border-zinc-500">
+            <p class="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-yellow">Trayectoria</p>
+            <h2 class="text-4xl font-semibold tracking-tight text-white sm:text-5xl">Experiencia</h2>
         </div>
-        <div class="flex justify-between items-center py-10">
-            <h2 class="text-5xl">Educación</h2>
-        </div>
+        <a href="#contacto" class="w-fit border-b-2 border-yellow pb-2 text-base font-semibold text-white transition duration-200 hover:text-yellow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow focus-visible:ring-offset-4 focus-visible:ring-offset-zinc-950">Contáctame</a>
+    </div>
+    <div class="overflow-hidden rounded-[2rem] border border-zinc-800 bg-zinc-900/35">
+        {jobs.map((job) => (
+            <article class="grid gap-4 border-b border-zinc-800 p-6 last:border-b-0 sm:p-7 lg:grid-cols-[1fr_auto] lg:items-center">
+                <div>
+                    <div class="mb-3 flex flex-wrap items-center gap-3">
+                        <h3 class="text-2xl font-semibold tracking-tight text-white">{job.title}</h3>
+                        <span class="rounded-full bg-yellow px-3 py-1 text-sm font-semibold text-zinc-950">{job.type}</span>
+                    </div>
+                    <p class="text-zinc-300">{job.company} · {job.location}</p>
+                </div>
+                <p class="text-sm font-medium uppercase tracking-[0.16em] text-zinc-400 lg:text-right">{job.period}</p>
+            </article>
+        ))}
+    </div>
+    <div class="mt-12 grid gap-6 rounded-[2rem] border border-yellow/25 bg-yellow/10 p-6 sm:p-7 lg:grid-cols-[0.55fr_1fr] lg:items-center">
         <div>
-            <div class="pb-5">
-                <div class="flex justify-between pb-1.5">
-                    <h4 class="text-2xl">CFGS Desarrollo de Aplicación Multiplataforma</h4>
-                    <p class="bg-yellow rounded-full p-2 px-4">Fulltime</p>
-                </div>
-                <div class="flex justify-between">
-                    <div class="flex justify-between w-1/3">
-                        <p>IES El Rincón</p>
-                        <p>Las Palmas</p>
-                    </div>
-                    <p class="w-2/3 text-right">Sep 2018 - Jun 2021</p>
-                </div>
-            </div>
-            <hr class="border-zinc-500">
+            <p class="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-yellow">Formación</p>
+            <h2 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">Educación</h2>
         </div>
+        <article>
+            <div class="mb-3 flex flex-wrap items-center gap-3">
+                <h3 class="text-2xl font-semibold tracking-tight text-white">{education.title}</h3>
+                <span class="rounded-full bg-yellow px-3 py-1 text-sm font-semibold text-zinc-950">{education.type}</span>
+            </div>
+            <div class="flex flex-col gap-2 text-zinc-300 sm:flex-row sm:items-center sm:justify-between">
+                <p>{education.center} · {education.location}</p>
+                <p class="text-sm font-medium uppercase tracking-[0.16em] text-zinc-400">{education.period}</p>
+            </div>
+        </article>
     </div>
 </section>

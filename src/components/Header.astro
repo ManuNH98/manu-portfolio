@@ -1,32 +1,38 @@
-<header>
-    <div class="flex justify-between items-center">
-        <div>
-            <h1 class="text-6xl" >Hola, soy <span class="border-b-8 border-yellow">Manuel Navarro</span></h1>
-            <h2 class="text-5xl">Web Developer</h2>
-            <p class="text-xl pt-10 pb-20 w-2/3 text-justify text-zinc-400">De la isla de Gran Canaria, soy un apasionado desarrollador con gran interes en elaborar soluciones tecnologías web.</p>
-            <div class="flex gap-20">
-                <a href="#" class="text-xl border-b-2 border-yellow pb-3 ease-in duration-200 hover:border-b-8">Contáctame</a>
-                <div class="flex justify-between items-center gap-7">
-                    <div>
-                        <a href="https://github.com/ManuNH98">
-                            <img src="/assets/images/icons/logo-github-dark.svg" alt="Manunh GitHub Profile" class="h-10 w-10 xl:h-12 xl:w-12">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="https://www.linkedin.com/in/manuel-navarro-higueras/">
-                            <img src="/assets/images/icons/logo-linkedin-dark.svg" alt="Manunh Linkedin Profile"  class="h-8 w-8 xl:h-10 xl:w-10">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="https://twitter.com/ManuNH98">
-                            <img src="/assets/images/icons/logo-twitter-dark.svg" alt="Manunh Twitter Profile"  class="h-8 w-8 xl:h-10 xl:w-10">
-                        </a>
-                    </div>
+<header id="inicio" class="relative py-20 sm:py-24 lg:py-32">
+    <div class="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+        <div class="max-w-3xl">
+            <p class="mb-6 inline-flex items-center gap-3 rounded-full border border-yellow/30 bg-yellow/10 px-4 py-2 text-sm font-medium uppercase tracking-[0.24em] text-yellow">
+                Web Developer · Gran Canaria
+            </p>
+            <h1 class="text-5xl font-semibold leading-[0.95] tracking-tight text-white sm:text-6xl lg:text-[5.6rem]">
+                Hola, soy <span class="text-yellow">Manuel Navarro</span>
+            </h1>
+            <h2 class="mt-5 text-3xl font-medium text-zinc-300 sm:text-4xl lg:text-5xl">Creo interfaces web modernas, rápidas y cuidadas.</h2>
+            <p class="mt-8 max-w-2xl text-lg leading-8 text-zinc-400 sm:text-xl">
+                De la isla de Gran Canaria, soy un apasionado desarrollador con gran interés en elaborar soluciones tecnológicas web con foco en rendimiento, diseño y experiencia de usuario.
+            </p>
+            <div class="mt-10 flex flex-col gap-6 sm:flex-row sm:items-center">
+                <a href="#contacto" class="inline-flex w-fit items-center justify-center rounded-full bg-yellow px-6 py-3 text-base font-semibold text-zinc-950 transition duration-200 hover:-translate-y-0.5 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow focus-visible:ring-offset-4 focus-visible:ring-offset-zinc-950">
+                    Contáctame
+                </a>
+                <div class="flex items-center gap-3" aria-label="Perfiles sociales">
+                    <a href="https://github.com/ManuNH98" target="_blank" class="grid h-12 w-12 place-items-center rounded-full border border-zinc-700 bg-zinc-900/70 transition duration-200 hover:-translate-y-0.5 hover:border-yellow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow" aria-label="Perfil de GitHub de Manuel Navarro">
+                        <img src="/assets/images/icons/logo-github-dark.svg" alt="Logo de GitHub" class="h-7 w-7">
+                    </a>
+                    <a href="https://www.linkedin.com/in/manuel-navarro-higueras/" target="_blank" class="grid h-12 w-12 place-items-center rounded-full border border-zinc-700 bg-zinc-900/70 transition duration-200 hover:-translate-y-0.5 hover:border-yellow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow" aria-label="Perfil de LinkedIn de Manuel Navarro">
+                        <img src="/assets/images/icons/logo-linkedin-dark.svg" alt="Logo de LinkedIn" class="h-6 w-6">
+                    </a>
+                    <a href="https://twitter.com/ManuNH98" target="_blank" class="grid h-12 w-12 place-items-center rounded-full border border-zinc-700 bg-zinc-900/70 transition duration-200 hover:-translate-y-0.5 hover:border-yellow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow" aria-label="Perfil de Twitter de Manuel Navarro">
+                        <img src="/assets/images/icons/logo-twitter-dark.svg" alt="Logo de Twitter" class="h-6 w-6">
+                    </a>
                 </div>
             </div>
         </div>
-        <div class="flex justify-end">
-            <img src="../../public/assets/images/profile.webp" alt="Manuel Navarro" class="w-2/3 h-2/3 grayscale">
+        <div class="relative mx-auto w-full max-w-md lg:max-w-none">
+            <div class="absolute -inset-6 rounded-[3rem] border border-yellow/20 bg-yellow/5 blur-sm"></div>
+            <div class="relative overflow-hidden rounded-[2.5rem] border border-zinc-800 bg-zinc-900/60 p-4 shadow-2xl shadow-zinc-950/60">
+                <img src="/assets/images/profile.webp" alt="Retrato de Manuel Navarro" class="aspect-[4/5] w-full rounded-[2rem] object-cover grayscale">
+            </div>
         </div>
     </div>
 </header>
