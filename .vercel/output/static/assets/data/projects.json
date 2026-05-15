@@ -1,0 +1,22 @@
+[
+    {
+        "urlImage": "/assets/images/projects/avistaloo/avistaloo.webp",
+        "title": "Avistaloo",
+        "categories": ["Vue", "JavaScript", "TailwindCSS", "Web"]
+    },
+    {
+        "urlImage": "/assets/images/projects/tutotu/tutotu.webp",
+        "title": "Tutotu",
+        "categories": ["Stack MEAN", "TailwindCSS", "Web"]
+    },
+    {
+        "urlImage": "/assets/images/projects/f1stats/f1stats.webp",
+        "title": "F1 Stats",
+        "categories": ["Stack MEVN", "TailwindCSS", "Web"]
+    },
+    {
+        "urlImage": "",
+        "title": "Inventory Me",
+        "categories": ["React", "TypeScript", "NestJS", "Supabase", "SaaS"]
+    }
+]
