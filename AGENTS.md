@@ -28,6 +28,7 @@ Primary goals for changes in this repo:
 
 Run commands from the repository root.
 
+- Use Node.js `>=22.12.0` and pnpm `>=10.17.0`.
 - `pnpm install` installs dependencies.
 - `pnpm run dev` starts the local Astro dev server, usually at `localhost:4321`.
 - `pnpm run build` builds the production site.
