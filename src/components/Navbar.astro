@@ -1,14 +1,73 @@
-<nav class="sticky top-0 z-50 py-5 backdrop-blur-xl">
-    <div class="flex flex-col gap-4 rounded-full border border-zinc-800/80 bg-zinc-950/75 px-5 py-4 shadow-2xl shadow-zinc-950/40 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+<nav class="sticky top-0 z-50 py-3 md:py-5 md:backdrop-blur-xl">
+    <div class="rounded-[2rem] border border-zinc-800/80 bg-zinc-950/85 px-5 py-4 shadow-2xl shadow-zinc-950/40 sm:rounded-full sm:px-6">
+        <div class="flex items-center justify-between gap-4">
         <a href="#inicio" class="group inline-flex items-center gap-3 text-xl font-semibold tracking-tight text-white outline-none focus-visible:ring-2 focus-visible:ring-yellow focus-visible:ring-offset-4 focus-visible:ring-offset-zinc-950 lg:text-2xl">
             <span class="h-2.5 w-2.5 rounded-full bg-yellow transition-transform duration-300 group-hover:scale-150"></span>
             Manuel Navarro
         </a>
-        <div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-zinc-300 sm:justify-end lg:text-base">
+
+        <button id="menu-toggle" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-zinc-700 bg-zinc-900/70 text-white transition duration-200 hover:border-yellow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow md:hidden" aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menú de navegación">
+            <span class="sr-only">Abrir menú de navegación</span>
+            <span class="flex h-4 w-5 flex-col justify-between" aria-hidden="true">
+                <span id="menu-line-top" class="h-0.5 w-full rounded-full bg-yellow transition duration-300"></span>
+                <span id="menu-line-middle" class="h-0.5 w-full rounded-full bg-yellow transition duration-300"></span>
+                <span id="menu-line-bottom" class="h-0.5 w-full rounded-full bg-yellow transition duration-300"></span>
+            </span>
+        </button>
+
+        <div class="hidden items-center gap-x-5 text-sm text-zinc-300 md:flex lg:text-base">
             <a href="#proyectos" class="transition-colors duration-200 hover:text-yellow focus-visible:text-yellow focus-visible:outline-none">Proyectos</a>
             <a href="#tecnologias" class="transition-colors duration-200 hover:text-yellow focus-visible:text-yellow focus-visible:outline-none">Tecnologías</a>
             <a href="#experiencia" class="transition-colors duration-200 hover:text-yellow focus-visible:text-yellow focus-visible:outline-none">Experiencia</a>
             <a href="#contacto" class="transition-colors duration-200 hover:text-yellow focus-visible:text-yellow focus-visible:outline-none">Contacto</a>
         </div>
+        </div>
+
+        <div id="mobile-menu" class="max-h-0 overflow-hidden opacity-0 transition-all duration-300 ease-out md:hidden">
+            <div class="grid gap-2 pt-5 text-base text-zinc-300">
+                <a href="#proyectos" class="rounded-2xl border border-zinc-800 bg-zinc-900/55 px-4 py-3 transition duration-200 hover:border-yellow hover:text-yellow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow">Proyectos</a>
+                <a href="#tecnologias" class="rounded-2xl border border-zinc-800 bg-zinc-900/55 px-4 py-3 transition duration-200 hover:border-yellow hover:text-yellow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow">Tecnologías</a>
+                <a href="#experiencia" class="rounded-2xl border border-zinc-800 bg-zinc-900/55 px-4 py-3 transition duration-200 hover:border-yellow hover:text-yellow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow">Experiencia</a>
+                <a href="#contacto" class="rounded-2xl border border-zinc-800 bg-yellow px-4 py-3 font-semibold text-zinc-950 transition duration-200 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow">Contacto</a>
+            </div>
+        </div>
     </div>
 </nav>
+
+<script>
+    const menuToggle = document.querySelector<HTMLButtonElement>("#menu-toggle");
+    const mobileMenu = document.querySelector<HTMLElement>("#mobile-menu");
+    const topLine = document.querySelector<HTMLElement>("#menu-line-top");
+    const middleLine = document.querySelector<HTMLElement>("#menu-line-middle");
+    const bottomLine = document.querySelector<HTMLElement>("#menu-line-bottom");
+
+    const setMenuOpen = (isOpen: boolean) => {
+        if (!menuToggle || !mobileMenu || !topLine || !middleLine || !bottomLine) return;
+
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+        menuToggle.setAttribute("aria-label", isOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación");
+
+        mobileMenu.classList.toggle("max-h-0", !isOpen);
+        mobileMenu.classList.toggle("opacity-0", !isOpen);
+        mobileMenu.classList.toggle("max-h-96", isOpen);
+        mobileMenu.classList.toggle("opacity-100", isOpen);
+
+        topLine.classList.toggle("translate-y-[7px]", isOpen);
+        topLine.classList.toggle("rotate-45", isOpen);
+        middleLine.classList.toggle("opacity-0", isOpen);
+        bottomLine.classList.toggle("-translate-y-[7px]", isOpen);
+        bottomLine.classList.toggle("-rotate-45", isOpen);
+    };
+
+    menuToggle?.addEventListener("click", () => {
+        setMenuOpen(menuToggle.getAttribute("aria-expanded") !== "true");
+    });
+
+    mobileMenu?.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => setMenuOpen(false));
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") setMenuOpen(false);
+    });
+</script>
