@@ -1,23 +1,37 @@
 ---
 import projects from "../../public/assets/data/projects.json";
 ---
-<section>
-    <div class="py-16">
-        <div class="flex justify-between items-center pb-10">
-            <h2 class="text-5xl">Projects</h2>
-            <a href="#" class="text-xl border-b-2 border-yellow pb-3 ease-in duration-200 hover:border-b-8">Contáctame</a>
+
+<section id="proyectos" class="py-20 sm:py-24">
+    <div class="mb-10 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+            <p class="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-yellow">Portfolio</p>
+            <h2 class="text-4xl font-semibold tracking-tight text-white sm:text-5xl">Proyectos</h2>
         </div>
-        <div class="grid grid-cols-2 gap-10">
-            {projects.map((project) => (
-                <div>
-                    <img src={project.urlImage}>
-                    <h4 class="text-3xl pt-3">{project.title}</h4>
-                    <p class="text-xl text-zinc-400">{project.categories.join(', ')}</p>
+        <a href="#contacto" class="w-fit border-b-2 border-yellow pb-2 text-base font-semibold text-white transition duration-200 hover:text-yellow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow focus-visible:ring-offset-4 focus-visible:ring-offset-zinc-950">Contáctame</a>
+    </div>
+    <div class="grid gap-6 lg:grid-cols-2">
+        {projects.map((project) => (
+            <article class="group overflow-hidden rounded-[2rem] border border-zinc-800 bg-zinc-900/45 transition duration-300 hover:-translate-y-1 hover:border-yellow/50 hover:bg-zinc-900/80">
+                <div class="relative aspect-[16/10] overflow-hidden bg-zinc-900">
+                    {project.urlImage ? (
+                        <img src={project.urlImage} alt={`Captura del proyecto ${project.title}`} class="h-full w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy">
+                    ) : (
+                        <div class="flex h-full w-full items-center justify-center bg-[radial-gradient(circle_at_30%_20%,rgba(250,204,21,0.22),transparent_32%),linear-gradient(135deg,#18181b,#09090b)]">
+                            <span class="rounded-full border border-yellow/40 px-5 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-yellow">En desarrollo</span>
+                        </div>
+                    )}
+                    <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-zinc-950/80 to-transparent"></div>
                 </div>
-            ))}
-        </div>
-        <div class="flex justify-center items-center pt-14">
-            <a href="" class="text-xl border-b-2 border-yellow pb-3 ease-in duration-200 hover:border-b-8">Ver más</a>
-        </div>
+                <div class="p-6 sm:p-7">
+                    <h3 class="text-3xl font-semibold tracking-tight text-white">{project.title}</h3>
+                    <div class="mt-5 flex flex-wrap gap-2">
+                        {project.categories.map((category) => (
+                            <span class="rounded-full border border-zinc-700 px-3 py-1 text-sm text-zinc-300">{category}</span>
+                        ))}
+                    </div>
+                </div>
+            </article>
+        ))}
     </div>
 </section>
