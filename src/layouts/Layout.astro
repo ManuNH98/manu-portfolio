@@ -1,5 +1,8 @@
 ---
 import  SpeedInsights  from "@vercel/speed-insights/astro"
+import "../styles/globals.css"; 
+import Navbar from "../components/Navbar.astro"
+import Footer from "../components/Footer.astro";
 const { title } = Astro.props;
 ---
 <html lang="es">
@@ -10,9 +13,22 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
   </head>
-  <body>
-    <h1>{title}</h1>
+  <body class="px-5 microsm:px-10 lg:px-20 xl:px-40">
+    <Navbar/>
     <slot /> <!-- tu contenido es inyectado aquí -->
+    <Footer/>
     <SpeedInsights/>
   </body>
 </html>
+
+<style is:global>
+  body{
+    width: 100%;
+    height: 100%;
+
+    /* Add your background pattern here */
+    background: #09090B;
+    color: white;
+  }
+  
+</style>

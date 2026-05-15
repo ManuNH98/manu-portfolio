@@ -1,0 +1,23 @@
+---
+import projects from "../../public/assets/data/projects.json";
+---
+<section>
+    <div class="py-16">
+        <div class="flex justify-between items-center pb-10">
+            <h2 class="text-5xl">Projects</h2>
+            <a href="#" class="text-xl border-b-2 border-yellow pb-3 ease-in duration-200 hover:border-b-8">Contáctame</a>
+        </div>
+        <div class="grid grid-cols-2 gap-10">
+            {projects.map((project) => (
+                <div>
+                    <img src={project.urlImage}>
+                    <h4 class="text-3xl pt-3">{project.title}</h4>
+                    <p class="text-xl text-zinc-400">{project.categories.join(', ')}</p>
+                </div>
+            ))}
+        </div>
+        <div class="flex justify-center items-center pt-14">
+            <a href="" class="text-xl border-b-2 border-yellow pb-3 ease-in duration-200 hover:border-b-8">Ver más</a>
+        </div>
+    </div>
+</section>
